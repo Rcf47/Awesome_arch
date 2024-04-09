@@ -673,7 +673,7 @@ do
 		"google-chrome-stable",
 		"wezterm",
 		"telegram-desktop",
-		"firefox",
+		--"firefox",
 	}
 
 	for _, i in pairs(cmds) do
