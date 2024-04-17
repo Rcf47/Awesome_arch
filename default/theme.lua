@@ -104,7 +104,7 @@ theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
 local wallpaper_path = {
-	["Chrome"] = "~/.config/awesome/default/Wallpaper/abstract-planet-space-purple-wallpaper-preview.jpg",
+	["Chrome"] = "~/.config/awesome/default/Wallpaper/gori_vershina_sumerki.jpg",
 	["Terminal"] = "~/.config/awesome/default/Wallpaper/archlinux.png",
 	["Others"] = "~/.config/awesome/default/Wallpaper/wall.png",
 	["Telegram"] = "~/.config/awesome/default/Wallpaper/autumn-forest-wallpaper.1920x1080.jpg",
