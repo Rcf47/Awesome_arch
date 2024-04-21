@@ -257,7 +257,7 @@ awful.screen.connect_for_each_screen(function(s)
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			mylauncher,
+			--mylauncher,
 			s.mytaglist,
 			s.mypromptbox,
 		},
@@ -403,8 +403,8 @@ globalkeys = gears.table.join(
 	end, { description = "lua execute prompt", group = "awesome" }),
 	-- Menubar
 	awful.key({ modkey }, "p", function()
-		menubar.show()
-	end, { description = "show the menubar", group = "launcher" })
+		awful.spawn.with_shell("rofi -show drun")
+	end, { description = "show the rofi", group = "launcher" })
 )
 
 clientkeys = gears.table.join(
