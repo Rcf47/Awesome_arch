@@ -322,6 +322,9 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+	awful.key({}, "Print", function()
+		awful.util.spawn_with_shell("gnome-screenshot --interactive")
+	end, { description = "screenshot", group = "screenshot" }),
 	awful.key({ modkey, "Shift" }, "s", function()
 		awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
 	end, { description = "toggle systray", group = "awesome" }),
