@@ -223,6 +223,41 @@ awful.screen.connect_for_each_screen(function(s)
 	s.mytaglist = awful.widget.taglist({
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
+		layout = {
+			layout = wibox.layout.fixed.horizontal,
+		},
+		widget_template = {
+			{
+				{
+					{
+						id = "text_role",
+						widget = wibox.widget.textbox,
+					},
+					layout = wibox.layout.fixed.horizontal,
+				},
+				left = 13,
+				right = 13,
+				widget = wibox.container.margin,
+			},
+			id = "background_role",
+			widget = wibox.container.background,
+			-- Add support for hover colors and an index label
+			create_callback = function(self, tag, index, objects) --luacheck: no unused args
+				--self:get_children_by_id("index_role")[1].markup = "<b> " .. tag.index .. " </b>"
+				self:connect_signal("mouse::enter", function()
+					if self.bg ~= beautiful.bg_urgent then
+						self.backup = self.bg
+						self.has_backup = true
+					end
+					self.bg = beautiful.bg_urgent
+				end)
+				self:connect_signal("mouse::leave", function()
+					if self.has_backup then
+						self.bg = self.backup
+					end
+				end)
+			end,
+		},
 		buttons = taglist_buttons,
 	})
 
