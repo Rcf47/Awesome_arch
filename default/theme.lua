@@ -22,12 +22,12 @@ theme.font = "Fira Code 16"
 
 theme.bg_normal = "#1E1E2E"
 theme.bg_focus = "#1E1E2E"
-theme.bg_urgent = "#89B4FA"
+theme.bg_urgent = "#F5C2E7"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
 
 theme.fg_normal = "#ffffff"
-theme.fg_focus = "#89B4FA"
+theme.fg_focus = "#ffffff"
 theme.fg_urgent = "#ffffff"
 theme.fg_minimize = "#ffffff"
 
@@ -48,7 +48,8 @@ theme.border_marked = "#A4B9EF"
 -- prompt_[fg|bg|fg_cursor|bg_cursor|font]
 -- hotkeys_[bg|fg|border_width|border_color|shape|opacity|modifiers_fg|label_bg|label_fg|group_margin|font|description_font]
 -- Example:
---theme.taglist_bg_focus = "#ff0000"
+theme.taglist_bg_focus = "#89B4FA"
+theme.taglist_fg_focus = "#1E1E2E"
 
 -- Generate taglist squares:
 local taglist_square_size = dpi(5)
