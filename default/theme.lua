@@ -15,7 +15,7 @@ local theme = {}
 local shape = require("gears.shape")
 local cr = require("lgi").cairo
 local line = function(cr, width, height)
-	shape.rectangle(cr, width, 2)
+  shape.rectangle(cr, width, 2)
 end
 
 theme.font = "Fira Code 16"
@@ -105,24 +105,24 @@ theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
 local wallpaper_path = {
-	["Chrome"] = "~/.config/awesome/default/Wallpaper/gori_vershina_sumerki.jpg",
-	["Terminal"] = "~/.config/awesome/default/Wallpaper/archlinux.png",
-	["Others"] = "~/.config/awesome/default/Wallpaper/wall.png",
-	["Telegram"] = "~/.config/awesome/default/Wallpaper/autumn-forest-wallpaper.1920x1080.jpg",
-	["GPT"] = "~/.config/awesome/default/Wallpaper/gory_tuchi_more_69213_1920x1080.jpg",
-	["WorkProgramms"] = "~/.config/awesome/default/Wallpaper/sunset.jpeg",
-	["Relax"] = "~/.config/awesome/default/Wallpaper/dark-cat-rosewater.png",
+  ["Chrome"] = "~/.config/awesome/default/Wallpaper/gori_vershina_sumerki.jpg",
+  ["Terminal"] = "~/.config/awesome/default/Wallpaper/archlinux.png",
+  ["Others"] = "~/.config/awesome/default/Wallpaper/wall.png",
+  ["Telegram"] = "~/.config/awesome/default/Wallpaper/autumn-forest-wallpaper.1920x1080.jpg",
+  ["GPT"] = "~/.config/awesome/default/Wallpaper/gory_tuchi_more_69213_1920x1080.jpg",
+  ["WorkProgramms"] = "~/.config/awesome/default/Wallpaper/sunset.jpeg",
+  ["Servers"] = "~/.config/awesome/default/Wallpaper/dark-cat-rosewater.png",
 }
 for tag, wallpaper in pairs(wallpaper_path) do
-	awful.tag.attached_connect_signal(1, "property::selected", function()
-		local focused = awful.screen.focused()
+  awful.tag.attached_connect_signal(1, "property::selected", function()
+    local focused = awful.screen.focused()
 
-		if focused.selected_tag and focused.selected_tag.name == tag then
-			theme.wallpaper = wallpaper
-			theme.wallpaper_cmd = { "feh", "--bg-fill", wallpaper }
-			os.execute("feh --bg-fill " .. wallpaper)
-		end
-	end)
+    if focused.selected_tag and focused.selected_tag.name == tag then
+      theme.wallpaper = wallpaper
+      theme.wallpaper_cmd = { "feh", "--bg-fill", wallpaper }
+      os.execute("feh --bg-fill " .. wallpaper)
+    end
+  end)
 end
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "default/layouts/fairhw.png"

@@ -194,7 +194,11 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "Chrome", "Terminal", "Others", "Telegram", "GPT", "WorkProgramms", "Relax" }, s, awful.layout.layouts[0])
+  awful.tag(
+    { "Chrome", "Terminal", "Others", "Telegram", "GPT", "WorkProgramms", "Servers" },
+    s,
+    awful.layout.layouts[0]
+  )
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
