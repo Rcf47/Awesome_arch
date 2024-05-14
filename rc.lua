@@ -103,9 +103,9 @@ myawesomemenu = {
       hotkeys_popup.show_help(nil, awful.screen.focused())
     end,
   },
-  { "manual",      terminal .. " -e man awesome" },
+  { "manual", terminal .. " -e man awesome" },
   { "edit config", editor_cmd .. " " .. awesome.conffile },
-  { "restart",     awesome.restart },
+  { "restart", awesome.restart },
   {
     "quit",
     function()
@@ -194,11 +194,7 @@ awful.screen.connect_for_each_screen(function(s)
   set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag(
-    { "Chrome", "Terminal", "Others", "Telegram", "GPT", "WorkProgramms", "Relax" },
-    s,
-    awful.layout.layouts[0]
-  )
+  awful.tag({ "Chrome", "Terminal", "Others", "Telegram", "GPT", "WorkProgramms", "Relax" }, s, awful.layout.layouts[0])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
@@ -297,7 +293,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mypromptbox,
     },
     s.mytasklist, -- Middle widget
-    {           -- Right widgets
+    { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       cpu_widget(),
       ram_widget(),
@@ -601,7 +597,7 @@ awful.rules.rules = {
       role = {
         "AlarmWindow", -- Thunderbird's calendar.
         "ConfigManager", -- Thunderbird's about:config.
-        "pop-up",    -- e.g. Google Chrome's (detached) Developer Tools.
+        "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
       },
     },
     properties = { floating = true },
@@ -611,7 +607,7 @@ awful.rules.rules = {
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  { rule = { class = "firefox" },                 properties = { screen = 1, tag = "GPT" } },
+  { rule = { class = "firefox" }, properties = { screen = 1, tag = "GPT" } },
   {
     rule = { class = "org.wezfurlong.wezterm" },
     properties = { screen = 1, tag = "Terminal" },
