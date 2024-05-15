@@ -28,6 +28,8 @@ local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local rofi = "rofi -show drun"
 local rofi_windows = "rofi -show window"
 
+-- my tags
+myTags = { "󰖟 ", " ", "󰈮 ", " ", "󰭹 ", "󰋩 ", "󰒋 " }
 --connect autorun
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
