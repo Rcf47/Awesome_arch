@@ -29,6 +29,24 @@ awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
+naughty.config.defaults.position = "top_middle"
+-- naughty.config.defaults.width = 300
+-- naughty.config.defaults.height = 100
+-- naughty.config.defaults.max_width = 600
+-- naughty.config.defaults.max_height = 200
+naughty.config.defaults.bg = "#FAB387"
+naughty.config.defaults.fg = "#1E1E2E"
+naughty.config.defaults.border_color = "#ffffff"
+naughty.config.defaults.border_width = 1
+naughty.config.defaults.shape = function(cr, width, height)
+  gears.shape.rounded_rect(cr, width, height, 5)
+end
+naughty.config.defaults.icon = myIcon
+naughty.config.defaults.icon_size = 25
+naughty.config.defaults.timeout = 7
+naughty.config.defaults.title = "System Notification"
+naughty.config.defaults.margin = 10
+
 if awesome.startup_errors then
   naughty.notify({
     preset = naughty.config.presets.critical,
