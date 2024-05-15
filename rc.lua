@@ -139,7 +139,12 @@ myawesomemenu = {
   },
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, myIcon }, { "open terminal", terminal } } })
+menus = {
+  { "Aplication menu", rofi },
+  { "Windows menu", rofi_windows },
+}
+
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, myIcon }, { "menus", menus } } })
 
 mylauncher = awful.widget.launcher({ image = myIcon, menu = mymainmenu })
 
