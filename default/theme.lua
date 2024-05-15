@@ -105,13 +105,13 @@ theme.titlebar_maximized_button_normal_active = themes_path .. "default/titlebar
 theme.titlebar_maximized_button_focus_active = themes_path .. "default/titlebar/maximized_focus_active.png"
 
 local wallpaper_path = {
-  ["Chrome"] = "~/.config/awesome/default/Wallpaper/gori_vershina_sumerki.jpg",
-  ["Terminal"] = "~/.config/awesome/default/Wallpaper/archlinux.png",
-  ["Others"] = "~/.config/awesome/default/Wallpaper/wall.png",
-  ["Telegram"] = "~/.config/awesome/default/Wallpaper/autumn-forest-wallpaper.1920x1080.jpg",
-  ["GPT"] = "~/.config/awesome/default/Wallpaper/gory_tuchi_more_69213_1920x1080.jpg",
-  ["WorkProgramms"] = "~/.config/awesome/default/Wallpaper/sunset.jpeg",
-  ["Servers"] = "~/.config/awesome/default/Wallpaper/dark-cat-rosewater.png",
+  ["󰖟 "] = "~/.config/awesome/default/Wallpaper/gori_vershina_sumerki.jpg",
+  [" "] = "~/.config/awesome/default/Wallpaper/archlinux.png",
+  ["󰈮 "] = "~/.config/awesome/default/Wallpaper/wall.png",
+  [" "] = "~/.config/awesome/default/Wallpaper/autumn-forest-wallpaper.1920x1080.jpg",
+  ["󰭹 "] = "~/.config/awesome/default/Wallpaper/gory_tuchi_more_69213_1920x1080.jpg",
+  ["󰋩 "] = "~/.config/awesome/default/Wallpaper/sunset.jpeg",
+  ["󰒋 "] = "~/.config/awesome/default/Wallpaper/dark-cat-rosewater.png",
 }
 for tag, wallpaper in pairs(wallpaper_path) do
   awful.tag.attached_connect_signal(1, "property::selected", function()
