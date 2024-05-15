@@ -665,22 +665,22 @@ awful.rules.rules = {
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  { rule = { class = "firefox" }, properties = { screen = 1, tag = "GPT" } },
+  { rule = { class = "firefox" }, properties = { screen = 1, tag = "󰭹 " } },
   {
     rule = { class = "org.wezfurlong.wezterm" },
-    properties = { screen = 1, tag = "Terminal" },
+    properties = { screen = 1, tag = " " },
   },
   {
     rule = { class = "pomatez" },
-    properties = { screen = 1, tag = "Others" },
+    properties = { screen = 1, tag = "󰈮 " },
   },
   {
     rule = { class = "TelegramDesktop" },
-    properties = { screen = 1, tag = "Telegram" },
+    properties = { screen = 1, tag = " " },
   },
   {
     rule = { class = "Google-chrome" },
-    properties = { screen = 1, tag = "Chrome" },
+    properties = { screen = 1, tag = "󰖟 " },
   },
 }
 -- }}}
