@@ -29,7 +29,7 @@ local rofi = "rofi -show drun"
 local rofi_windows = "rofi -show window"
 
 -- my tags
-myTags = { "󰖟 ", " ", "󰈮 ", " ", "󰭹 ", "󰋩 ", "󰒋 " }
+local myTags = require("myFiles.myTags")
 --connect autorun
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
@@ -128,9 +128,9 @@ myawesomemenu = {
       hotkeys_popup.show_help(nil, awful.screen.focused())
     end,
   },
-  { "manual", terminal .. " -e man awesome" },
+  { "manual",      terminal .. " -e man awesome" },
   { "edit config", editor_cmd .. " " .. awesome.conffile },
-  { "restart", awesome.restart },
+  { "restart",     awesome.restart },
   {
     "quit",
     function()
@@ -141,7 +141,7 @@ myawesomemenu = {
 
 menus = {
   { "Aplication menu", rofi },
-  { "Windows menu", rofi_windows },
+  { "Windows menu",    rofi_windows },
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, myIcon }, { "menus", menus } } })
@@ -328,7 +328,7 @@ awful.screen.connect_for_each_screen(function(s)
       s.mypromptbox,
     },
     s.mytasklist, -- Middle widget
-    { -- Right widgets
+    {             -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       cpu_widget(),
       ram_widget(),
@@ -422,7 +422,6 @@ globalkeys = gears.table.join(
   awful.key({ modkey }, "F2", function()
     awful.tag.setmwfact(0.8)
   end, { description = "установить ширину мастер-окна на 80%", group = "layout" }),
-
   awful.key({ modkey }, "F3", function()
     awful.tag.setmwfact(0.2)
   end, { description = "установить ширину мастер-окна на 20%", group = "layout" }),
@@ -630,7 +629,7 @@ awful.rules.rules = {
   {
     rule_any = {
       instance = {
-        "DTA", -- Firefox addon DownThemAll.
+        "DTA",   -- Firefox addon DownThemAll.
         "copyq", -- Includes session name in class.
         "pinentry",
       },
@@ -639,7 +638,7 @@ awful.rules.rules = {
         "Blueman-manager",
         "Gpick",
         "Kruler",
-        "MessageWin", -- kalarm.
+        "MessageWin",  -- kalarm.
         "Sxiv",
         "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
         "Wpa_gui",
@@ -653,9 +652,9 @@ awful.rules.rules = {
         "Event Tester", -- xev.
       },
       role = {
-        "AlarmWindow", -- Thunderbird's calendar.
+        "AlarmWindow",   -- Thunderbird's calendar.
         "ConfigManager", -- Thunderbird's about:config.
-        "pop-up", -- e.g. Google Chrome's (detached) Developer Tools.
+        "pop-up",        -- e.g. Google Chrome's (detached) Developer Tools.
       },
     },
     properties = { floating = true },
@@ -665,22 +664,22 @@ awful.rules.rules = {
   { rule_any = { type = { "normal", "dialog" } }, properties = { titlebars_enabled = false } },
 
   -- Set Firefox to always map on the tag named "2" on screen 1.
-  { rule = { class = "firefox" }, properties = { screen = 1, tag = "󰭹 " } },
+  { rule = { class = "firefox" },                 properties = { screen = 1, tag = myTags[5] } },
   {
     rule = { class = "org.wezfurlong.wezterm" },
-    properties = { screen = 1, tag = " " },
+    properties = { screen = 1, tag = myTags[2] },
   },
   {
     rule = { class = "pomatez" },
-    properties = { screen = 1, tag = "󰈮 " },
+    properties = { screen = 1, tag = myTags[3] },
   },
   {
     rule = { class = "TelegramDesktop" },
-    properties = { screen = 1, tag = " " },
+    properties = { screen = 1, tag = myTags[4] },
   },
   {
     rule = { class = "Google-chrome" },
-    properties = { screen = 1, tag = "󰖟 " },
+    properties = { screen = 1, tag = myTags[1] },
   },
 }
 -- }}}
@@ -718,7 +717,7 @@ client.connect_signal("request::titlebars", function(c)
       buttons = buttons,
       layout = wibox.layout.fixed.horizontal,
     },
-    { -- Middle
+    {   -- Middle
       { -- Title
         align = "center",
         widget = awful.titlebar.widget.titlewidget(c),
