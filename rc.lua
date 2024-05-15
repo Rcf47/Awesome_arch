@@ -266,7 +266,7 @@ awful.screen.connect_for_each_screen(function(s)
           },
           layout = wibox.layout.fixed.horizontal,
         },
-        left = 13,
+        left = 18,
         right = 13,
         widget = wibox.container.margin,
       },
