@@ -23,6 +23,11 @@ local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 
 -- RAM widget
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+
+--rofi
+local rofi = "rofi -show drun"
+local rofi_windows = "rofi -show window"
+
 --connect autorun
 awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
