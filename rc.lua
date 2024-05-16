@@ -290,8 +290,11 @@ awful.screen.connect_for_each_screen(function(s)
           end
           self.bg = beautiful.bg_urgent
         end)
+        self:connect_signal("button::press", function()
+          self.has_backup = false
+        end)
         self:connect_signal("mouse::leave", function()
-          if self.has_backup and self.bg == beautiful.bg_urgent then
+          if self.has_backup then
             self.bg = self.backup
           end
         end)
