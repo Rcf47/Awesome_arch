@@ -87,7 +87,7 @@ end
 beautiful.init("~/.config/awesome/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "wezterm"
+terminal = "kitty"
 editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -773,7 +773,7 @@ do
 
   local cmds = {
     "google-chrome-stable",
-    "wezterm",
+    "kitty",
     "telegram-desktop",
     --"firefox",
   }
