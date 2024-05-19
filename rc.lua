@@ -681,6 +681,10 @@ awful.rules.rules = {
     properties = { screen = 1, tag = myTags[2] },
   },
   {
+    rule = { class = "kitty" },
+    properties = { screen = 1, tag = myTags[2] },
+  },
+  {
     rule = { class = "pomatez" },
     properties = { screen = 1, tag = myTags[3] },
   },
