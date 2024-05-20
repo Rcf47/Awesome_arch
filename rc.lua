@@ -784,7 +784,7 @@ do
 
   for _, i in pairs(cmds) do
     if not isProgramRunning(i) then
-      awful.spawn.single_instance(i)
+      awful.spawn.with_shell(i)
     end
   end
 end
