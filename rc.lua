@@ -777,7 +777,7 @@ do
 
   local cmds = {
     "google-chrome-stable",
-    "kitty",
+    "kitty --session ~/.config/kitty/sessions/work.conf",
     "telegram-desktop",
     --"firefox",
   }
