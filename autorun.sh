@@ -8,3 +8,4 @@ run() {
 }
 
 run setxkbmap -layout "us,ru" -option "grp:caps_toggle,grp_led:scroll"
+run greenclip daemon

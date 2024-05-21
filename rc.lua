@@ -506,6 +506,10 @@ globalkeys = gears.table.join(
   -- Menubar
   awful.key({ modkey }, "p", function()
     awful.spawn.with_shell("rofi -show drun")
+  end, { description = "show the rofi", group = "launcher" }),
+  -- greenclip rofi
+  awful.key({ modkey }, "o", function()
+    awful.spawn.with_shell("rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}'")
   end, { description = "show the rofi", group = "launcher" })
 )
 
