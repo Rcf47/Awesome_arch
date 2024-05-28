@@ -430,10 +430,10 @@ globalkeys = gears.table.join(
   end, { description = "установить ширину мастер-окна на 50%", group = "layout" }),
 
   -- Устанавливаем ширину мастер-окна на 70% экрана
-  awful.key({ modkey }, "F2", function()
+  awful.key({ modkey }, "F3", function()
     awful.tag.setmwfact(0.75)
   end, { description = "установить ширину мастер-окна на 80%", group = "layout" }),
-  awful.key({ modkey }, "F3", function()
+  awful.key({ modkey }, "F2", function()
     awful.tag.setmwfact(0.2)
   end, { description = "установить ширину мастер-окна на 20%", group = "layout" }),
 
