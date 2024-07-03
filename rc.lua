@@ -783,6 +783,7 @@ do
     "google-chrome-stable",
     "kitty --session ~/.config/kitty/sessions/work.conf",
     "telegram-desktop",
+    "autokey-gtk",
     --"firefox",
   }
 
