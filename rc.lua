@@ -780,7 +780,7 @@ do
   end
 
   local cmds = {
-    "google-chrome-stable",
+    --"google-chrome-stable",
     "kitty --session ~/.config/kitty/sessions/work.conf",
     "telegram-desktop",
     "autokey-gtk",
@@ -796,3 +796,6 @@ end
 
 --awful.spawn.with_shell("docker run -p 1338:1338 ramonvc/freegpt-webui")
 --awful.spawn.with_shell("docker run -d -p 8858:8858 -it fantasypeak/freegpt:latest")
+awful.spawn.with_shell("~/Github/spoof/SpoofDPI/spoof-dpi")
+awful.spawn.with_shell("google-chrome-stable --proxy-server='http://127.0.0.1:8080'")
+awful.spawn.with_shell("pulseaudio --kill")
