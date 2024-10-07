@@ -780,7 +780,7 @@ do
   end
 
   local cmds = {
-    --"google-chrome-stable",
+    "google-chrome-stable",
     "kitty --session ~/.config/kitty/sessions/work.conf",
     "telegram-desktop",
     "autokey-gtk",
