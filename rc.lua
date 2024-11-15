@@ -364,6 +364,9 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
+  awful.key({ modkey }, "Scroll_Lock", function()
+    awful.util.spawn_with_shell("gnome-calculator")
+  end, { description = "calculator", group = "calculator" }),
   awful.key({}, "Print", function()
     awful.util.spawn_with_shell("gnome-screenshot --interactive")
   end, { description = "screenshot", group = "screenshot" }),
