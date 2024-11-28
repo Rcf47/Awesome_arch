@@ -471,7 +471,7 @@ globalkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "Left", function(c)
     local c = client.focus
     if c then
-      c:relative_move(0, 0, 10, 0) -- Уменьшаем ширину на 10 пикселей
+      c:relative_move(0, 0, -10, 0) -- Уменьшаем ширину на 10 пикселей
     end
   end, { description = "уменьшить ширину окна", group = "client" }),
   -- left side change width
@@ -486,7 +486,7 @@ globalkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "Right", function(c)
     local c = client.focus
     if c then
-      c:relative_move(0, 0, -10, 0) -- Увеличиваем ширину на 10 пикселей
+      c:relative_move(0, 0, 10, 0) -- Увеличиваем ширину на 10 пикселей
     end
   end, { description = "увеличить ширину окна", group = "client" }),
   -- right side change width
