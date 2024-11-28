@@ -466,6 +466,67 @@ globalkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "space", function()
     awful.layout.inc(-1)
   end, { description = "select previous", group = "layout" }),
+  --
+  -- Change width window
+  awful.key({ modkey, "Shift" }, "Left", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, 0, 10, 0) -- Уменьшаем ширину на 10 пикселей
+    end
+  end, { description = "уменьшить ширину окна", group = "client" }),
+  -- left side change width
+  awful.key({ modkey, "Ctrl" }, "Left", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(-10, 0, 10, 0) -- Уменьшаем ширину на 10 пикселей
+    end
+  end, { description = "уменьшить ширину окна", group = "client" }),
+
+  -- Увеличение ширины окна
+  awful.key({ modkey, "Shift" }, "Right", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, 0, -10, 0) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
+  -- right side change width
+  awful.key({ modkey, "Ctrl" }, "Right", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(10, 0, -10, 0) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
+
+  --Change height top
+  awful.key({ modkey, "Shift" }, "Up", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, 10, 0, -10) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
+
+  awful.key({ modkey, "Shift" }, "Down", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, -10, 0, 10) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
+
+  -- Change height bottom
+
+  awful.key({ modkey, "Ctrl" }, "Up", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, 0, 0, -10) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
+
+  awful.key({ modkey, "Ctrl" }, "Down", function(c)
+    local c = client.focus
+    if c then
+      c:relative_move(0, 0, 0, 10) -- Увеличиваем ширину на 10 пикселей
+    end
+  end, { description = "увеличить ширину окна", group = "client" }),
 
   -- Горячая клавиша для установки компоновки Floating
   awful.key({ modkey, "Shift" }, "f", function()
