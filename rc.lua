@@ -412,6 +412,9 @@ globalkeys = gears.table.join(
   awful.key({ modkey }, "c", function()
     awful.spawn.with_shell("google-chrome-stable")
   end, { description = "open chrome", group = "launcher" }),
+  awful.key({ modkey }, "t", function()
+    awful.spawn.with_shell("thunar")
+  end, { description = "open thunar", group = "launcher" }),
   awful.key({ modkey }, "g", function()
     awful.spawn.with_shell("gpick")
   end, { description = "open gpick", group = "program" }),
