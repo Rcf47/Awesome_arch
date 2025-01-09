@@ -24,7 +24,7 @@ theme.font = "Fira Code 16"
 theme.bg_normal = "#1E1E2E"
 theme.bg_focus = "#89B4FA"
 --theme.bg_urgent = "#F5C2E7"
-theme.bg_urgent = "#ED2683"
+theme.bg_urgent = "#FF3895"
 theme.bg_minimize = "#444444"
 theme.bg_systray = theme.bg_normal
 
