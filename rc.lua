@@ -341,7 +341,9 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist, -- Middle widget
     {             -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      -- for xf86-nouveau
       -- awful.widget.watch("bash -c \"sensors | grep 'temp1' | sed '1d; s/temp1: */GPU temp: /; s/ (high.*/ /'\"", 15),
+      -- for nvidia-470xx-utils
       awful.widget.watch(
         'bash -c "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader | awk \'{print \\"GPU: \\" \\$1 \\"°C \\"}\'"',
         15
