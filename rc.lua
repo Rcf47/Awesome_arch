@@ -381,6 +381,9 @@ globalkeys = gears.table.join(
   awful.key({}, "Print", function()
     awful.util.spawn_with_shell("gnome-screenshot --interactive")
   end, { description = "screenshot", group = "screenshot" }),
+  awful.key({ modkey }, "Print", function()
+    awful.util.spawn_with_shell("scrot")
+  end, { description = "Take a fast screenshot", group = "screenshot" }),
   awful.key({ modkey, "Shift" }, "s", function()
     awful.screen.focused().systray.visible = not awful.screen.focused().systray.visible
   end, { description = "toggle systray", group = "awesome" }),
@@ -609,7 +612,7 @@ clientkeys = gears.table.join(
   awful.key({ modkey, "Control" }, "Return", function(c)
     c:swap(awful.client.getmaster())
   end, { description = "move to master", group = "client" }),
-  awful.key({ modkey }, "o", function(c)
+  awful.key({ modkey, "Shift" }, "o", function(c)
     c:move_to_screen()
   end, { description = "move to screen", group = "client" }),
   awful.key({ modkey, "Mod1" }, "t", function(c)
@@ -860,7 +863,7 @@ do
   local cmds = {
     "google-chrome-stable",
     "kitty --session ~/.config/kitty/sessions/work.conf",
-    "telegram-desktop",
+    "Telegram",
     "autokey-gtk",
     --"firefox",
   }
